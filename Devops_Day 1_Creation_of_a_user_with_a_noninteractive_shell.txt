@@ -1,0 +1,20 @@
+Devops Day 1: Creation of a user with a non-interactive shell
+
+	1. We aim to create an account on the system without a user being able to log into the server
+	2. Security best practice for service accounts (web servers, databases, automated backup script) that need to own files or run background processes but without direct terminal access
+	3. The user cant ssh, cli login, and gui login with those credentials
+	4. The admin can run the application in the name of a user with the user not able to do so himself/herself 
+	4. Steps:
+		1. ssh to the server where the user will be created (ssh user@server)
+		2. create the user account with non-interactive shell (sudo useradd -s /sbin/nologin [username])
+		3. verify the user's shell configuration in "/etc/passwd" file (grep [username] /etc/passwd) (id [username])
+
+
+Cloud Azure Day 1: Create SSH Key Pair for Azure Virtual Machine
+	
+	1. Doing a cloud migration and one of the first tasks is to create an SSH Key pair
+	2. Decided to use 4096 bit key to make the key stronger
+	3. Also required to be an rsa key pair with name "xfusion-kp"
+	4. Logged into the portal with temporary credentials then went to the "SSH Key".
+		a. Keys were generated with an attached azure group.
+
